@@ -1,0 +1,17 @@
+   0 ls
+   1 date > 1.txt
+   2 cat 1.txt
+   3 df -h / >> 1.txt
+   4 cat 1.txt
+   5 history | tail -3 >> 1.txt
+   6 cat 1.txt
+   7 cat /etc/passwd | grep "cron" /etc/passwd >> 1.txt
+   8 cat 1.txt
+   9 grep "root" /etc/group | wc -l >> 1.txt
+  10 cat 1.txt
+  11 vi 2.txt
+  12 clear
+  13 ls
+  14 cat 2.txt
+  15 history > /tmp/history.txt && export_file /tmp/history_4.txt
+  16 history > /tmp/history.txt && export_file /tmp/history.txt

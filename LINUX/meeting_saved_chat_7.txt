@@ -1,0 +1,4 @@
+13:02:44 От Vadym Prudnikov до Все:
+	prusha@DESKTOP-5JOURUG:~$ find . -type f -name "*.git" -execdir mv "$(pwd)" /reposit	ories \;
+13:51:06 От Teacher 23 Teacher 23 до Все:
+	https://github.com/tritonJS826/111124-ptm

@@ -1,0 +1,50 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "22-05-2007",
+        "iban": "US64SVBKUS6S3300958879"
+    },
+    {
+        "firstName": "Sophie",
+        "lastName": "Dubois",
+        "dateOfBirth": "18-09-1992",
+        "iban": "FR7630006000011234567890189"
+    },
+    {
+        "firstName": "Luca",
+        "lastName": "Rossi",
+        "dateOfBirth": "14-11-2015",
+        "iban": "IT60X0542811101000000123456"
+    },
+    {
+        "firstName": "Emily",
+        "lastName": "Smith",
+        "dateOfBirth": "07-04-1988",
+        "iban": "GB29NWBK60161331926819"
+    },
+    {
+        "firstName": "Jürgen",
+        "lastName": "Müller",
+        "dateOfBirth": "29-12-2000",
+        "iban": "DE44500105175407324931"
+    },
+    {
+        "firstName": "Carlos",
+        "lastName": "González",
+        "dateOfBirth": "03-06-1975",
+        "iban": "ES9121000418450200051332"
+    },
+    {
+        "firstName": "Yuki",
+        "lastName": "Tanaka",
+        "dateOfBirth": "25-01-2010",
+        "iban": "JP76SMBC0032322123456789"
+    },
+    {
+        "firstName": "Ahmed",
+        "lastName": "Al-Farsi",
+        "dateOfBirth": "11-08-2005",
+        "iban": "AE070331234567890123456"
+    }
+]

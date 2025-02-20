@@ -1,0 +1,12 @@
+10:45:31 От Stanislav M. до Все:
+	Утречко
+	
+11:05:10 От Stanislav M. до Все:
+	1_aED5wDp1mm1MT_dldrJcqA.png
+	
+11:06:00 От Stanislav M. до Все:
+	try except finally
+	
+11:19:08 От Teacher 23 Teacher 23 до Все:
+	https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+	

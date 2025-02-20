@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+Date=`date '+%d-%m-%y'`
+echo $Date
+echo Hello Alex
+for i in {1..5}
+do
+date +'%H-%M-%S' > File-$i.txt
+sleep 1
+chmod go+w File-$i.txt
+done
+mkdir -p $Date
+cp File*.txt $Date
+for FILE in $Date/*
+do
+cat $FILE
+done

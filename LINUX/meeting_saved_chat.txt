@@ -1,0 +1,53 @@
+12:55:24 От Alexander Golubenko до Все:
+	staff:x:50:	Поля:	group_name: Имя группы.	Например, staff — это название группы.	password_placeholder: Поле для зашифрованного пароля группы.	Обычно здесь стоит x, указывающее, что пароли групп хранятся в более защищённом файле /etc/gshadow.	group_id: Уникальный идентификатор группы (GID).	В данном случае, 50 — это GID группы staff.	user_list: Список пользователей, которые являются членами этой группы.	Этот список разделён запятыми и может быть пустым (например, если группа пустая).
+12:56:34 От Stanislav M. до Все:
+	Reacted to "Поля:
+	group_name: Им..." with 👍
+13:16:17 От Alla Vinogradova до Все:
+	Reacted to "Поля:
+	group_name: Им..." with 👍
+13:20:06 От Teacher 23 Teacher 23 до Все:
+	find . -name "script.sh"
+13:27:05 От Teacher 23 Teacher 23 до Все:
+	locate *.txt
+13:37:16 От Teacher 23 Teacher 23 до Все:
+	du -sh *
+13:37:43 От Teacher 23 Teacher 23 до Все:
+	find /path/to/search -name "*.txt" -size +1M
+13:41:04 От Teacher 23 Teacher 23 до Все:
+	find  /home/ -mtime -5 -name "*.txt" -size +15k 2>/dev/null
+13:43:15 От Teacher 23 Teacher 23 до Все:
+	find -type f -name "*.old" -deletefind -type f -name "*.old" -deletasdasdefind -type f -name find -type f -name "*.old" -delete"*.old" -delete
+13:43:28 От Darina Trotska до Все:
+	find -type f -name "*old" - delete
+13:43:34 От Darina Trotska до Все:
+	find /path/to/search -type f -mtime +7 -delete
+13:44:19 От Teacher 23 Teacher 23 до Все:
+	find /path/to/search -type f -exec chmod 644 {} \;
+13:48:46 От Teacher 23 Teacher 23 до Все:
+	find . -name script | xargs wc
+13:49:51 От Teacher 23 Teacher 23 до Все:
+	sudo updatedb
+13:50:45 От Teacher 23 Teacher 23 до Все:
+	locate -r '/path/to/directory/*\.txt$'
+13:52:50 От Teacher 23 Teacher 23 до Все:
+	for i in {1..5}
+	do
+	    echo "Number: $i"
+	Done
+13:54:51 От Teacher 23 Teacher 23 до Все:
+	for i in /home/myUser
+	do
+	    echo "fileOrDirectory: $i"
+	Done
+13:58:21 От Teacher 23 Teacher 23 до Все:
+	counter=1
+	while [ $counter -le 5 ]
+	do
+	    echo "Counter: $counter"
+	    ((counter++))
+	done
+13:59:16 От Teacher 23 Teacher 23 до Все:
+	while true; do echo "Alive" && sleep 1;done
+14:00:40 От Teacher 23 Teacher 23 до Все:
+	watch -n 2 echo "hello!"
