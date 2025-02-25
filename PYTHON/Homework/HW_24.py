@@ -16,61 +16,65 @@
 # Введите число: 0
 # Текущая сумма: 10
 
-# def summa():
-#     s = 0
-#     while s == 0 or x != 0:
-#         x = yield s
-#         s += x
-#         print("Текущая сумма: ", s)
-#
-#
-# s = summa()
-# next(s)
-# while True:
-#     try:
-#         a = int(input("Введите число: "))
-#         s.send(a)
-#     except StopIteration:
-#         break
-
-
-
-
-
-# def generator_sum(number):
+# def gen_summa():
+#     summa = 0
 #     while True:
-#         yield number
+#         n = yield summa
+#         summa += n
 #
+# gs = gen_summa()
+# next(gs)
+# print("Введите числа для суммирования (0 для окончания):")
 # while True:
-#     num = int(input("Введите числа для суммирования (0 для окончания): Введите число: "))
+#     num = int(input("Введите число: "))
+#     print("Текущая сумма: ", gs.send(num))
 #     if num == 0:
 #         break
-# g_s = generator_sum(num)
-# print(f"Текущая сумма {next(g_s)}:")
 
-# 2. Напишите генератор, который будет генерировать арифметическую прогрессию
+# 2. Напишите генератор, который будет генерировать бесконечную арифметическую прогрессию.
+# Он должен принимать начало прогрессии (необязательно, если не передано, то старт с 1)
+# и шаг прогрессии
 
-# def generator_arif_prog(number):
-#     a, b = 0, 0
+# from time import sleep
+#
+# def gen_a_p(start, step):
 #     while True:
-#         yield a
-#         a = a[i] + (a[i + 1] - a[i]) * b
-#
-# num = int(input("Введите число: "))
-# gen_ap = generator_arif_prog(num)
-# print(f"Первые {num} чисел Фибоначчи:")
-# for i in range(num):
-#     print(next(gen_ap), end=" ")
-
-# a n = a 1 + (n − 1) ⋅ d
-
-# def ar_prog(a1, d, size):
-#     count = 1
-#     while count <= size:
-#         yield a1
-#         a1 += d
-#         count += 1
+#         yield start
+#         start += step
 #
 #
-# for i in ar_prog(1, 2, 10):
+# try:
+#     start = int(input("Введите число (начало прогрессии) или нажмите \"Enter\" (старт с 1): "))
+# except ValueError:
+#     start = 1
+# try:
+#     step = int(input("Введите число (шаг прогрессии) или нажмите \"Enter\" (шаг = 1): "))
+# except ValueError:
+#     step = 1
+# next(gen_a_p(start, step))
+# n = start + 3
+# for i in gen_a_p(start, step):
 #     print(i)
+#     sleep(0.5)
+#     if i > n:
+#         f = input("Продолжить - y, остановить - n: ").lower()
+#         n = i + 5
+#         if f == 'n':
+#             print("Процесс завершен.")
+#             break
+
+# Option 2
+# try:
+#     start = int(input("Введите число (начало прогрессии) или нажмите \"Enter\" (старт с 1): "))
+# except ValueError:
+#     start = 1
+# try:
+#     step = int(input("Введите число (шаг прогрессии) или нажмите \"Enter\" (шаг = 1): "))
+# except ValueError:
+#     step = 1
+# stop = 1000**1000
+# gen_a_p = (x + step for x in range(start, stop, step))
+# print(start)
+# while True:
+#     print(next(gen_a_p))
+#     sleep(0.5)
