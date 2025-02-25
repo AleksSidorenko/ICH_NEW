@@ -9,26 +9,28 @@
 
 # Создание двух директорий.
 
+# Запрашиваем исходную директорию
+echo "Enter the path to the SOURCE directory:"
+read source_directory
+
+# Запрашиваем целевую директорию
+echo "Enter the path to the TARGET directory:"
+read target_directory
+
+# Выводим введенные пути для проверки
+echo "SOURCE directory: $source_directory"
+echo "TARGET directory: $target_directory"
 
 
-for i in {1..100}; do
-    rand_name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)
-    touch "$rand_name"
-done
+# Указываем директории
+# DIR1="dir1"  # Первая директория
+# DIR2="dir2"  # Вторая директория
 
-mkdir even_files odd_files
-
-for file in *; do
-    num=$(echo "$file" | grep -o '[0-9]*')
-
-    if [ $((num % 2)) -eq 0 ]; then
-        mv "$file" even_files/
-    else
-        mv "$file" odd_files/
-    fi
-done
-
-
+# Проверяем, существуют ли директории
+if [[ ! -d "$DIR1" || ! -d "$DIR2" ]]; then
+    echo "Одна или обе директории не существуют. Создаём..."
+    mkdir -p "$DIR1" "$DIR2"
+fi
 
 # Создаём 100 файлов с случайными именами
 for i in {1..100}; do
@@ -37,17 +39,6 @@ for i in {1..100}; do
 done
 
 echo "Создано 100 файлов со случайными именами."
-
-
-# Указываем директории
-DIR1="dir1"  # Первая директория
-DIR2="dir2"  # Вторая директория
-
-# Проверяем, существуют ли директории
-if [[ ! -d "$DIR1" || ! -d "$DIR2" ]]; then
-    echo "Одна или обе директории не существуют. Создаём..."
-    mkdir -p "$DIR1" "$DIR2"
-fi
 
 # Перебираем файлы в первой директории
 for file in "$DIR1"/*; do
@@ -61,3 +52,29 @@ for file in "$DIR1"/*; do
 done
 
 echo "Готово!"
+
+# for i in {1..100}; do
+#    rand_name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)
+#    touch "$rand_name"
+# done
+
+# mkdir even_files odd_files
+
+# for file in *; do
+#    num=$(echo "$file" | grep -o '[0-9]*')
+
+#    if [ $((num % 2)) -eq 0 ]; then
+#        mv "$file" even_files/
+#    else
+#        mv "$file" odd_files/
+#    fi
+# done
+
+
+
+
+
+
+
+
+
