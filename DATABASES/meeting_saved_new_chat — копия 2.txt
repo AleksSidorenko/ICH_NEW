@@ -1,0 +1,23 @@
+08:56:17 От Alexander Golubenko до Все:
+	Доброе четверговое утро!
+	
+09:03:14 От Vadym Prudnikov до Все:
+	доброе всем)
+	
+09:31:27 От Teacher 23 Teacher 23 до Все:
+	База данных с доступом на запись:
+	hostname: ich-edit.edu.itcareerhub.de
+	MYSQL_USER: ich1
+	MYSQL_PASSWORD: ich1_password_ilovedbs
+	
+09:40:08 От Teacher 23 Teacher 23 до Все:
+	https://habr.com/ru/articles/254773/
+	
+09:40:39 От Teacher 23 Teacher 23 до Все:
+	https://metanit.com/sql/tutorial/2.2.php
+	
+09:53:25 От Yevgeniy G до Все:
+	777 раньше номер имел значение :)))
+	Hanna Kulykovska:😁
+	Alla Vinogradova:😎
+	
