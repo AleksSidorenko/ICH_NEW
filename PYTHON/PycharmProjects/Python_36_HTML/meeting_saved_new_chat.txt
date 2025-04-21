@@ -1,0 +1,157 @@
+10:46:03 От Klymentii Taran до Все:
+	то-то я думаю, почему так холодно на улице, а то пайтон второй парой..
+	Teacher 23 Teacher 23:👍
+	
+10:54:27 От Teacher 23 Teacher 23 до Все:
+	Грокаем Алгоритмы
+	Hanna Kulykovska:🔥
+	
+11:00:30 От Yevgeniy G до Все:
+	Grokaem_Algoritmi_iIllystrirovanoe_posobie_dlia_programmsitov_2017.pdf
+	Hanna Kulykovska, Teacher 23 Teacher 23, Alla Vinogradova:🔥
+	
+11:01:12 От Hanna Kulykovska до Все:
+	+
+	
+11:01:12 От Olha Dvornyk до Все:
+	+
+	
+11:01:15 От Klymentii Taran до Все:
+	+
+	
+11:01:22 От Alla Vinogradova до Все:
+	+
+	
+11:01:22 От Darina Trotskaya до Все:
+	+
+	
+11:01:29 От Yevgeniy G до Все:
+	+
+	
+11:01:38 От Oleksii Starodubov до Все:
+	+
+	
+11:10:17 От Maksym Poliakov до Все:
+	h1,h2 и т.д это размер шрифта грубо говоря
+	Teacher 23 Teacher 23:👍
+	
+11:11:59 От Klymentii Taran до Все:
+	Replying to "h1,h2 и т.д это размер шрифта г...":
+	спасибо🤝🏻
+	
+11:13:00 От Stanislav M. до Все:
+	<br> ещё, у них даже название какое то было но я не помню %)
+	Olha Dvornyk, Oleksii Starodubov:👍
+	
+11:13:43 От Alexander Golubenko до Все:
+	простенькая статья с основной структурой HTML 
+	https://sky.pro/wiki/html/osnovnye-ponyatiya-i-terminy-v-html/
+	Olha Dvornyk, Stanislav M., Oleksii Starodubov:👍
+	
+11:14:39 От Stanislav M. до Все:
+	Replying to "<br> ещё, у них даже название �...":
+	а вот
+	https://developer.mozilla.org/ru/docs/Glossary/Void_element
+	
+11:15:46 От Maksym Poliakov до Все:
+	когда нет текста между тегами он может выглядеть и вот так <Теg ............ />
+	
+11:15:57 От Teacher 23 Teacher 23 до Все:
+	https://www.w3schools.com/html/
+	
+11:15:58 От Oleksii Starodubov до Все:
+	ну если в перспективе на фулстак идти, то хтмл/цсс очень желательно заранее подучить
+	
+11:16:37 От Stanislav M. до Все:
+	li вроде
+	
+11:18:42 От Stanislav M. до Все:
+	бозовый html у нас точно будет с django
+	
+11:21:16 От Maksym Poliakov до Все:
+	Replying to "ну если в перспективе на фу�...":
+	без фраемворков это не поможет нужно будет выучить еще Vue, React или Angular ))
+	Oleksii Starodubov:👍
+	
+11:32:48 От Teacher 23 Teacher 23 до Все:
+	lesson36_extra.py
+	Alla Vinogradova:❤️
+	
+11:33:24 От Teacher 23 Teacher 23 до Все:
+	soup = BeautifulSoup('<a href="https://example.com" id="sds">Link</a><a href="https://example2.com" id="1sds">Link2</a>', 'html.parser')
+	links = soup.find_all('a')
+	for link in links:
+	    print(link)
+	    print(link['href'])
+	    print(link['id'])
+	print()
+	Olha Dvornyk:❤️
+	
+11:35:47 От Teacher 23 Teacher 23 до Все:
+	# .find_parent() — получение родительского элемента:
+	soup = BeautifulSoup("<div><p>Text</p><p>Text2</p></div>", 'html.parser')
+	p = soup.find('p')
+	# parent = p.find_parent()
+	parent = p.parent
+	print(type(parent))
+	print(parent.name)
+	print(parent)
+	child = parent.children
+	for ch in child:
+	    print(ch)
+	print()
+	Olha Dvornyk:❤️
+	
+11:43:14 От Stanislav M. до Все:
+	Ещё оказывается емейлы бывают не доменные а айпишные, пока дз делал выгуглил 😅
+	Darina Trotskaya, Hanna Kulykovska:😵‍💫
+	
+11:44:20 От Hanna Kulykovska до Все:
+	Replying to "Ещё оказывается емейлы быв�...":
+	Шоб ты долго жил)
+	Stanislav M.:🦀
+	
+12:00:30 От Teacher 23 Teacher 23 до Все:
+	# teacher
+	import re
+	
+	
+	def highlight_keywords(text, keywords):
+	    for word in keywords:
+	        pattern = rf'\b({word})\b (and)'  # r'\b(python)\b'
+	        text = re.sub(pattern, r'-\2- *\1*', text, flags=re.IGNORECASE)  # '*\1*' = '*python*' = '*Python*'
+	    return text
+	
+	
+	text = "This is a sample text. We need to highlight Python and programming."
+	keywords = ["python", "programming"]
+	print(highlight_keywords(text, keywords))
+	Olha Dvornyk:❤️
+	
+12:06:37 От Stanislav M. до Все:
+	pattern
+	
+12:06:53 От Darina Trotskaya до Все:
+	Import re
+	Stanislav M.:💯
+	
+12:14:31 От Klymentii Taran до Все:
+	вынужден покинуть занятие, ухожу на работу :(
+	Alexander Golubenko, Oleksii Starodubov, Stanislav M.:👋
+	Hanna Kulykovska:😢
+	
+12:16:22 От Teacher 23 Teacher 23 до Все:
+	import re
+	
+	
+	text = "Dates: 03.06.2025, 05/02/2024"
+	# yyyy-mm-dd
+	
+	
+	pattern = r'.+: (\d{2})[./-](\d{2})[./-](\d{4})'
+	matches = re.findall(pattern, text)
+	print(matches)
+	new_text = re.sub(pattern, r'\3-\2-\1', text)
+	print(new_text)
+	Olha Dvornyk:❤️
+	

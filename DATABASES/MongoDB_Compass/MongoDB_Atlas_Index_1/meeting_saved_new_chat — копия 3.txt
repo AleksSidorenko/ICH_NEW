@@ -1,0 +1,284 @@
+09:43:32 От Hanna Kulykovska до Все:
+	Репликация и репликанты (бегущий по лезвию), кислота (acid) 🙈 
+	
+	БД до добра не доведут😅
+	Oleksii Starodubov:😁
+	
+10:14:49 От Teacher 23 Teacher 23 до Все:
+	Из коллекции sample_data.trips , которая содержит данные из шаринга велосипедов New York City Citibike:
+	Найти основную возрастную аудиторию - возраст наиболее активных пользователей.
+	
+10:21:17 От Maksym Poliakov до Все:
+	может сгрупировать по годам а потом работать с этими данными
+	Alexander Golubenko, Hanna Kulykovska:👍
+	
+10:30:25 От Oleksii Starodubov до Все:
+	1
+	Hanna Kulykovska:🔥
+	
+10:38:52 От Hanna Kulykovska до Все:
+	[
+	  {
+	    $match: {
+	      "birth year": {
+	        $ne: ""
+	      }
+	    }
+	  },
+	  {
+	    $project: {
+	      age: {
+	        $subtract: [
+	          new Date().getFullYear(),
+	          {
+	            $toInt: "$birth year"
+	          }
+	        ]
+	      }
+	    }
+	  },
+	  {
+	    $group: {
+	      _id: "$age",
+	      cnt: {
+	        $sum: 1
+	      }
+	    }
+	  },
+	  {
+	    $project: {
+	      age: "$_id",
+	      _id: 0,
+	      cnt: 1
+	    }
+	  },
+	  {
+	    $sort: {
+	      cnt: -1
+	    }
+	  },
+	  {
+	    $limit: 3
+	  }
+	]
+	Alla Vinogradova:❤️
+	
+10:45:07 От Alexander Golubenko до Все:
+	Replying to "Из коллекции sample_data.trips , кот...":
+	[
+	  {
+	    $match: {
+	      "birth year": {
+	        $nin: ["", null]
+	      }
+	    }
+	  },
+	  {
+	    $group: {
+	      _id: "$birth year",
+	      amount_users: {
+	        $sum: 1
+	      }
+	    }
+	  },
+	  {
+	    $sort: {
+	      amount_users: -1
+	    }
+	  },
+	  {
+	    $project: {
+	      age: {
+	        $subtract: [
+	          new Date().getFullYear(),
+	          "$_id"
+	        ]
+	      },
+	      amount_users: 1,
+	      birth_year: "$_id",
+	      _id: 0
+	    }
+	  }
+	]
+	
+10:58:41 От Teacher 23 Teacher 23 до Все:
+	Из коллекции companies найдем самую старую компанию. 
+	Подсчитать количество компаний, основанных в этот год.
+	
+11:08:43 От Alexander Golubenko до Все:
+	Replying to "Из коллекции companies найдем с�...":
+	[
+	  {
+	    $match: {
+	      founded_year: {
+	        $nin: ["", null]
+	      }
+	    }
+	  },
+	  {
+	    $sort: {
+	      founded_year: 1
+	    }
+	  },
+	  // {
+	  //   $limit:
+	  //     /**
+	  //      * Provide the number of documents to limit.
+	  //      */
+	  //     2
+	  // }
+	  {
+	    $match: {
+	      founded_year: {
+	        $eq: 1800
+	      }
+	    }
+	  },
+	  {
+	    $project:
+	      /**
+	       * specifications: The fields to
+	       *   include or exclude.
+	       */
+	      {
+	        name: 1,
+	        _id: 0,
+	        founded_year: 1,
+	        company_age: {
+	          $subtract: [
+	            new Date().getFullYear(),
+	            "$founded_year"
+	          ]
+	        }
+	      }
+	  },
+	  {
+	    $count: "string"
+	  }
+	]
+	
+11:12:55 От Teacher 23 Teacher 23 до Все:
+	Найти все обломки кораблей и пропавшие корабли в Бермудском треугольнике
+	из коллекции sample_geospatial .shipwrecks и подсчитать их количество.
+	
+11:13:13 От Teacher 23 Teacher 23 до Все:
+	{coordinates: {$geoWithin: { $geometry: { type: 'Polygon', coordinates: [ [ [ -64.785825, 32.294164 ], [ -66.057884, 18.415753 ], [ -77.323494, 25.046813], [ -81.403103, 30.278911 ], [-64.785825, 32.294164] ] ] }}}}
+	
+11:19:13 От Alla Vinogradova до Все:
+	db.shipwrecks.countDocuments({coordinates: {$geoWithin: { $geometry: { type: 'Polygon', coordinates: [ [ [ -64.785825, 32.294164 ], [ -66.057884, 18.415753 ], [ -77.323494, 25.046813], [ -81.403103, 30.278911 ], [-64.785825, 32.294164] ] ] }}}})
+	
+11:23:35 От Teacher 23 Teacher 23 до Все:
+	Из коллекции sample_restaurants.restaurants: 
+	Найти лучший кошерный ресторан в Бруклине по сумме оценок из отзывов.
+	
+11:44:06 От Alex Sidorenko до Все:
+	[
+	  {
+	    $match: {
+	      borough: "Brooklyn",
+	      cuisine: "Jewish/Kosher"
+	    }
+	  },
+	  {
+	    $unwind: {
+	      path: "$grades"
+	    }
+	  },
+	  {
+	    $group: {
+	      _id: {
+	        _id: "$_id",
+	        name: "$name",
+	        restaurant_id: "$restaurant_id"
+	      },
+	      sum: {
+	        $sum: "$grades.score"
+	      },
+	      avg_score: {
+	        $avg: "$grades.score"
+	      }
+	    }
+	  },
+	  {
+	    $sort: {
+	      avg_score: -1
+	    }
+	  },
+	  {
+	    $project: {
+	      _id: 0,
+	      name: "$_id.name",
+	      restoran: "$_id.restaurant_id",
+	      sum: 1,
+	      avg_score: {
+	        $round: ["$avg_score", 2]
+	      }
+	    }
+	  }
+	]
+	
+11:50:32 От Teacher 23 Teacher 23 до Все:
+	Найти, в какой день недели чаще всего брали велосипеды в аренду.
+	
+11:51:13 От Teacher 23 Teacher 23 до Все:
+	$dayOfWeek
+	
+11:59:35 От Oleksandr Kiselov до Все:
+	[
+	  {
+	    $project:
+	      /**
+	       * specifications: The fields to
+	       *   include or exclude.
+	       */
+	      {
+	        week_day: {
+	          $dayOfWeek: "$start time"
+	        }
+	      }
+	  },
+	  {
+	    $group:
+	      /**
+	       * _id: The id of the group.
+	       * fieldN: The first field name.
+	       */
+	      {
+	        _id: "$week_day",
+	        count: {
+	          $sum: 1
+	        }
+	      }
+	  },
+	  {
+	    $sort:
+	      /**
+	       * Provide any number of field/order pairs.
+	       */
+	      {
+	        count: -1
+	      }
+	  },
+	  {
+	    $limit:
+	      /**
+	       * Provide the number of documents to limit.
+	       */
+	      1
+	  }
+	]
+	
+12:00:16 От Teacher 23 Teacher 23 до Все:
+	Найти среднюю продолжительность поездки (tripduration) для разных возрастных групп (например: до 25 лет, 26–35, 36–45, 46–60, старше 60).
+	
+12:11:18 От Yevgeniy G до Все:
+	$switch: {
+	   branches: [
+	      { case: <expression>, then: <expression> },
+	      { case: <expression>, then: <expression> },
+	      ...
+	   ],
+	   default: <expression>
+	}
+	Olha Dvornyk:👍
+	

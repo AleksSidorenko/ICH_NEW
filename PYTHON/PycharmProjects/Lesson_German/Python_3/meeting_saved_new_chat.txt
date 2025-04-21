@@ -1,0 +1,172 @@
+15:32:28 От Stanislav M. до Все:
+	'''
+	Schreiben Sie einen Generator, der vom Benutzer Anfangs- und Endwerte annimmt und nur gerade Zahlen im
+	angegebenen Bereich generiert. Verwenden Sie diesen Generator, um alle geraden Zahlen vom Anfangs- bis zum
+	Endwert auszugeben.
+	'''
+	
+15:45:42 От Teacher 23 Teacher 23 до Все:
+	Бык тупогуб тупогубенький бычок у быка бела губа была тупа
+	
+15:47:46 От Teacher 23 Teacher 23 до Все:
+	Loesung
+	
+15:49:36 От Teacher 23 Teacher 23 до Все:
+	Ä - AE
+	
+15:57:46 От Stanislav M. до Все:
+	Die_1__Unterrichtsstrunde_txt.txt
+	
+15:58:29 От Teacher 23 Teacher 23 до Все:
+	Die Funktion aufrufen - вызвать функцию
+	Oleksii Starodubov:👍
+	
+15:59:59 От Olha Dvornyk до Все:
+	from collections import Counter
+	
+16:00:26 От Olena Marshalova до Все:
+	schleife
+	
+16:00:30 От Teacher 23 Teacher 23 до Все:
+	Die Schleife - cycle
+	
+16:01:17 От Oleksii Starodubov до Все:
+	Zyklus geht nicht?
+	
+16:01:59 От Teacher 23 Teacher 23 до Все:
+	Die FOR-Schleife
+	
+16:13:12 От Vadym Prudnikov до Все:
+	def zeichne_kette(text):
+	    result = {}
+	    for zeichen in text:
+	        if zeichen not in result:
+	            result[zeichen] = 1
+	        else:
+	            result[zeichen] += 1
+	    return result
+	
+	
+	zeichenkette_von_benutzer = input("Geben Sie einen text ein: ")
+	print(zeichne_kette(zeichenkette_von_benutzer))
+	
+16:16:19 От Teacher 23 Teacher 23 до Все:
+	result[zeichen] = result.get(Zeichen, 0) + 1
+	
+16:16:24 От Teacher 23 Teacher 23 до Все:
+	Return ...
+	
+16:33:08 От Maksym Poliakov до Все:
+	int(num)%2
+	
+16:34:32 От Stanislav M. до Все:
+	from typing import Generator
+	def rng_generator(number, return_num):
+	    while return_num != number + 1:
+	        yield return_num # возвращается максимум столько раз, сколько передали
+	        return_num += 1
+	
+	def even_numbers(start: float, end: float) -> Generator[float, float, float]:
+	    for num in rng_generator(end-1, start):
+	        if num % 2 == 0:
+	            yield num
+	
+	
+	# start_value = int(input("Enter the start value: "))
+	# end_value = int(input("Enter the end value: "))
+	start_value = 10.14
+	end_value = 15.17
+	res = even_numbers(start_value, end_value)
+	# for even_num in res:
+	#     print(even_num)
+	[print(next(res, 'Odd')) for _ in rng_generator(end_value-1, start_value)]
+	#[print(num) for num in res]
+	
+16:40:34 От Maksym Poliakov до Все:
+	from typing import Generator
+	def rng_generator(number, return_num):
+	    while return_num != number + 1:
+	        yield return_num # возвращается максимум столько раз, сколько передали
+	        return_num += 1
+	
+	def even_numbers(start: float, end: float) -> Generator[float, float, float]:
+	    for num in rng_generator(end-1, start):
+	        if num % 2 == 0:
+	            yield num
+	
+	
+	# start_value = int(input("Enter the start value: "))
+	# end_value = int(input("Enter the end value: "))
+	start_value = 10.14
+	end_value = 15.17
+	res = even_numbers(start_value, end_value)
+	# for even_num in res:
+	#     print(even_num)
+	[print(next(res, 'Odd')) for _ in rng_generator(end_value-1, start_value)]
+	#[print(num) for num in res]
+	эта строка не работает с float ей нужен только int
+	if num % 2 == 0: 
+	
+16:47:55 От Teacher 23 Teacher 23 до Все:
+	Aufgabe 6: Einführung in funktionale Programmierung
+	Schreiben Sie eine Funktion, die eine Liste von Zeichenketten entgegennimmt und nur diejenigen Zeichenketten zurückgibt, die mehr als 5 Zeichen enthalten. Verwenden Sie dafür die Funktion Filter.
+	
+16:49:38 От Alla Vinogradova до Alex Sidorenko (личное сообщение):
+	Schicks du den Code bitte?
+	
+16:50:16 От Alex Sidorenko до Alla Vinogradova (личное сообщение):
+	# Erstellen Sie ein Programm, das zwei Zahlen vom Benutzer annimmt
+	# und eine Division durchführt.
+	# Wenn der Benutzer Null als Divisor eingibt, sollte das Programm eine Fehlermeldung ausgeben
+	# und um die Eingabe eines anderen Divisors bitten.
+	
+	var1 = int(input("Geben Sie eine Zahl ein: "))
+	var2 = int(input("Geben Sie die zweite Zahl ein: "))
+	
+	try:
+	    result = var1 / var2
+	    print(result)
+	except ZeroDivisionError as e:
+	    print(e)
+	Alla Vinogradova:👍🏻
+	
+16:51:32 От Stanislav M. до Все:
+	from typing import Generator
+	def rng_generator(number, return_num):
+	    number = int(number)
+	    return_num = int(return_num)
+	    while return_num != number + 1:
+	        yield return_num
+	        return_num += 1
+	
+	def even_numbers(start: int, end: int) -> Generator[int, None, None]:
+	    for num in rng_generator(end-1, start):
+	        if num % 2 == 0:
+	            yield num
+	
+	# start_value = int(input("Enter the start value: "))
+	# end_value = int(input("Enter the end value: "))
+	start_value = 10.14
+	end_value = 15.17
+	res = even_numbers(start_value, end_value)
+	# for even_num in res:
+	#     print(even_num)
+	#[print(next(res, 'Odd')) for _ in rng_generator(start_value, end_value-1)]
+	[print(num) for num in res]
+	
+16:52:06 От Stanislav M. до Все:
+	Anders geht nicht, mit floats zu arbeiten ist sinnlos
+	
+16:55:20 От Teacher 23 Teacher 23 до Все:
+	beispiel_liste = ["Python", "ist", "eine", "großartige", "Programmiersprache"]
+	
+16:58:33 От Olha Dvornyk до Все:
+	def filter_length_str(list):
+	    return [word for word in list if len(word) > 5 ]
+	
+	beispiel_liste = ["Python", "ist", "eine", "großartige", "Programmiersprache"]
+	print(filter_length_str(beispiel_liste))
+	
+16:59:12 От Teacher 23 Teacher 23 до Все:
+	return list(filter(lambda s:
+	

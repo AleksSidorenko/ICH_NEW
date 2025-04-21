@@ -1,0 +1,176 @@
+11:02:40 От Alexander Golubenko до Все:
+	{B26CBBA4-BA5C-4C7E-AAAC-5A6AA107879B}.png
+	
+11:02:56 От Oleksandr Kiselov до Все:
+	The animals make sound
+	The dogs barks
+	
+11:03:30 От Oleksii Starodubov до Все:
+	The animals make sound, The dogs barks
+	
+11:03:41 От Alexander Golubenko до Все:
+	Replying to "The animals make sound The dogs barks":
+	Только животное в ед. числе
+	
+11:03:54 От Hanna Kulykovska до Все:
+	The animals make sound, The dogs bark
+	
+11:04:47 От Oleksandr Kiselov до Все:
+	А self точно в super.makesound не обязательно передавать?
+	
+11:04:56 От Alexander Golubenko до Все:
+	Вот так и проверяется. Все копируют ответ Александра с ошибкой )))
+	
+11:08:16 От Maksym Poliakov до Все:
+	не нужно его передавать
+	
+11:32:34 От Alexander Golubenko до Все:
+	с маленькой задачи
+	Olha Dvornyk, Ayjemal Berdiyeva:👍
+	
+11:32:36 От Hanna Kulykovska до Все:
+	Абстрактные
+	
+11:32:44 От Olena Marshalova до Все:
+	Абстрактные
+	
+11:32:57 От Olha Dvornyk до Все:
+	с маленькой задачи
+	
+11:33:04 От Alla Vinogradova до Все:
+	С маленькой
+	
+11:33:46 От Teacher 23 Teacher 23 до Все:
+	Практическое задание
+	Создать систему наследования для геометрических фигур: фигура, прямоугольник, квадрат,
+	круг (можно добавить и другие плоские фигуры - например, параллелограмм, треугольник,
+	прямоугольный треугольник).
+	У всего определить площадь и периметр, а также __str__ (дополнительно можно добавить
+	__repr__).
+	Важно: где-то нужно переопределять методы, а площадь абстрактной фигуры не определена
+	
+11:36:17 От Teacher 23 Teacher 23 до Все:
+	Добавить метод, котовый выводит сообщение "Class: <class_name>"
+	
+11:48:09 От Maksym Poliakov до Все:
+	figures(ABC) а не perimetr
+	Teacher 23 Teacher 23:👍
+	
+11:59:58 От Hanna Kulykovska до Все:
+	+
+	
+12:00:02 От Oleksii Starodubov до Все:
+	
+	+
+	
+12:00:03 От Alexander Golubenko до Все:
+	+
+	
+12:00:07 От Yevgeniy G до Все:
+	+
+	
+12:00:14 От Alla Vinogradova до Все:
+	1
+	
+12:00:16 От Stani m до Все:
+	+/-
+	
+12:00:17 От Dmitro Averkiev до Все:
+	+ / -
+	
+12:00:22 От Olena Marshalova до Все:
+	+
+	
+12:00:28 От Olha Dvornyk до Все:
+	+
+	
+12:01:45 От Maksym Poliakov до Все:
+	я через print если не понятно от чего ошибка. дебагер сильно долго и неудобно 
+	Alexander Golubenko:➕
+	Alexander Golubenko:👍
+	
+12:06:39 От Alexander Golubenko до Все:
+	Площадь треугольника по трем сторонам
+	
+12:06:42 От Alexander Golubenko до Все:
+	{849F3937-DEB0-462C-B151-056189BBDCD2}.png
+	
+12:07:09 От Olha Dvornyk до Все:
+	S = √(р (р — а)(р — b)(p — c)), где a, b и с — значения длин сторон, р — половина периметра.
+	
+12:09:23 От Alexander Golubenko до Все:
+	from math import sqrt
+	
+	def triangle_area_heron(a, b, c):
+	    s = (a + b + c) / 2
+	    area = sqrt(s * (s - a) * (s - b) * (s - c))
+	    return area
+	
+12:23:09 От Hanna Kulykovska до Все:
+	import math
+	from abc import ABC, abstractmethod
+	
+	class Figure(ABC):
+	
+	    def class_name(self):
+	        return f"Class: {self.__class__.__name__}"
+	
+	    @abstractmethod
+	    def perimeter(self):
+	        pass
+	
+	    @abstractmethod
+	    def area(self):
+	        pass
+	
+	class Rectangle(Figure):
+	
+	    def __init__(self, width, height):
+	        self.width = width
+	        self.height = height
+	
+	    def __str__(self):
+	        return f"Rectangle width:{self.width}, height:{self.height}"
+	
+	    def __repr__(self):
+	        return f"Rectangle (width={self.width}, height={self.height})"
+	
+	    def perimeter(self):
+	        return 2 * (self.width + self.height)
+	
+	    def area(self):
+	        return self.width * self.height
+	
+12:23:11 От Hanna Kulykovska до Все:
+	class Triangle(Figure):
+	
+	    def __init__(self, a, b, c):
+	        self.a = a
+	        self.b = b
+	        self.c = c
+	
+	    def perimeter(self):
+	        return self.a + self.b + self.c
+	
+	    def area(self):
+	        s = self.perimeter()/2
+	        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+	
+	class Circle(Figure):
+	    pi = 3.14
+	
+	    def __init__(self, radius):
+	        self.radius = radius
+	
+	    def perimeter(self):
+	        return self.pi * self.radius * 2
+	
+	    def area(self):
+	        return self.pi * self.radius **2
+	
+	figures_list = [Rectangle(4, 5), Triangle(6, 7, 8), Circle(9)]
+	for figure in figures_list:
+	    print(figure.class_name())
+	    print(figure.perimeter())
+	    print(figure.area())
+	

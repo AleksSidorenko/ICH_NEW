@@ -1,0 +1,146 @@
+15:33:10 От Maksym Poliakov до Все:
+	ich komme ein bisschen später. Ich brauche meine Tochter abholen
+	
+15:35:32 От Olha Dvornyk до Все:
+	{E54975E7-EC9C-4FAD-9E10-F4BE2E22FC30}.png
+	
+15:36:41 От Alexander Golubenko до Все:
+	nur 4
+	Oleksii Starodubov:👍
+	
+15:38:21 От Olha Dvornyk до Все:
+	{42176174-6FE1-4A38-8464-739FAF1BF3A5}.png
+	
+15:39:30 От Teacher 23 Teacher 23 до Все:
+	DA_Technical_Python_LfS8.pdf
+	
+15:49:15 От Teacher 23 Teacher 23 до Все:
+	Erstellen Sie eine Klasse Kreis mit dem Attribut Radius und Methoden zur Berechnung des Umfangs und der Fläche des Kreises. Das Programm sollte ein Objekt der Klasse erstellen und die Ergebnisse der Berechnungen ausgeben.
+	
+15:53:15 От Maksym Poliakov до Все:
+	def __init__
+	
+15:53:36 От Maksym Poliakov до Все:
+	self.radius
+	
+15:57:31 От Teacher 23 Teacher 23 до Все:
+	Ich kann mich daran nicht erinnern
+	
+15:57:41 От Teacher 23 Teacher 23 до Все:
+	Ich erinnere mich nicht daran
+	
+16:21:09 От Teacher 23 Teacher 23 до Все:
+	Schreiben Sie eine Klasse Zaehler, die eine Klassenmethode enthält, die die Anzahl der erstellten Objekte dieser Klasse zurückgibt. Erstellen Sie mehrere Objekte und überprüfen Sie, ob die Methode die Anzahl korrekt zurückgibt.
+	
+16:21:10 От Vadym Prudnikov до Все:
+	import math
+	class Kreis:
+	
+	    def __init__(self, radius):
+	        self.radius = radius
+	
+	    def umfang(self):
+	        return 2 * math.pi * self.radius
+	
+	    def flaeche(self):
+	        return math.pi * self.radius ** 2
+	
+	
+	result = Kreis(5)
+	print(f"Umfang: {result.umfang():.2f}")
+	print(f"Flache: {result.flaeche():.2f}")
+	
+16:26:34 От Hanna Kulykovska до Все:
+	Alles wäre so schön, wenn es nicht so traurig wäre))) Besonders für diejenigen, die jeden Tag nachmittags arbeiten.
+	
+16:35:06 От Teacher 23 Teacher 23 до Все:
+	@classmethod
+	
+16:47:30 От Olha Dvornyk до Все:
+	Replying to "Schreiben Sie eine Klasse Zaehler, die eine Klasse...":
+	class Zaehler:
+	    counter = 0
+	
+	    def __init__(self):
+	        Zaehler.counter += 1
+	
+	    @classmethod
+	    def get_counter(cls):
+	        return Zaehler.counter
+	
+	
+	obj_1 = Zaehler()
+	print(Zaehler.get_counter())
+	# print(obj_1.counter)          # Nich richtich!
+	# obj_2 = Zaehler()             # Nich richtich!
+	# print(obj_2.get_counter())    # Nich richtich!
+	# print(obj_2.counter)          # Nich richtich!
+	# obj_3 = Zaehler()             # Nich richtich!
+	# print(obj_3.counter)          # Nich richtich!
+	
+16:47:39 От Stanislav M. до Все:
+	+
+	
+16:49:02 От Teacher 23 Teacher 23 до Все:
+	Erstellen Sie einen Dekorator, der die Anzahl der Aufrufe der dekorierten Funktion zählt. Wenden Sie diesen Dekorator auf eine Funktion an, die eine Willkommensnachricht für den Benutzer ausgibt.
+	
+17:08:22 От Teacher 23 Teacher 23 до Все:
+	In Python sind *args und **kwargs spezielle Syntaxelemente, die in Funktionsdefinitionen verwendet werden, um eine flexible Anzahl von Argumenten zu akzeptieren.
+	
+	*args
+	*args wird verwendet, um eine beliebige Anzahl von positional arguments (positionsbasierte Argumente) an eine Funktion zu übergeben.
+	Es wird als Tupel innerhalb der Funktion behandelt.
+	Beispiel:
+	
+	python
+	def addiere(*args):
+	    return sum(args)
+	
+17:08:43 От Teacher 23 Teacher 23 до Все:
+	print(addiere(1, 2, 3))        # Ausgabe: 6
+	print(addiere(4, 5, 6, 7, 8))  # Ausgabe: 30
+	Erklärung:
+	Die Funktion addiere nimmt beliebig viele Zahlen entgegen.
+	Alle übergebenen Argumente werden in args als Tupel gespeichert (args = (1, 2, 3) im ersten Beispiel).
+	Dies ist nützlich, wenn die Anzahl der Argumente nicht im Voraus bekannt ist.
+	**kwargs
+	**kwargs wird verwendet, um eine beliebige Anzahl von keyword arguments (Schlüssel-Wert-Paare) an eine Funktion zu übergeben.
+	Es wird als Dictionary innerhalb der Funktion behandelt.
+	Beispiel:
+	
+	python
+	def benutzer_info(**kwargs):
+	    for key, value in kwargs.items():
+	        print(f"{key}: {value}")
+	
+	benutzer_info(name="Anna", alter=25, beruf="Ingenieurin")
+	
+17:08:49 От Teacher 23 Teacher 23 до Все:
+	# Ausgabe:
+	# name: Anna
+	# alter: 25
+	# beruf: Ingenieurin
+	Erklärung:
+	Die Funktion benutzer_info akzeptiert beliebige Schlüssel-Wert-Paare.
+	Diese werden in kwargs als Dictionary gespeichert (kwargs = {'name': 'Anna', 'alter': 25, 'beruf': 'Ingenieurin'}).
+	Kombination von *args und **kwargs
+	Man kann beide zusammen verwenden, um sowohl positionsbasierte als auch Schlüssel-Wert-basierte Argumente zu akzeptieren.
+	
+	Beispiel:
+	
+	python
+	def beispiel_funktion(a, b, *args, **kwargs):
+	    print(f"a: {a}, b: {b}")
+	    print(f"args: {args}")
+	    print(f"kwargs: {kwargs}")
+	
+	beispiel_funktion(1, 2, 3, 4, x=5, y=6)
+	# Ausgabe:
+	# a: 1, b: 2
+	# args: (3, 4)
+	# kwargs: {'x': 5, 'y': 6}
+	Erklärung:
+	Die ersten beiden Argumente (a, b) sind normale positionsbasierte Argumente.
+	Weitere positionsbasierte Argumente (3, 4) werden in args gespeichert.
+	Schlüssel-Wert-Paare (x=5, y=6) landen in kwargs.
+	

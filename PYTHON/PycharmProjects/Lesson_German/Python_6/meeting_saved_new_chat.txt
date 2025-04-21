@@ -1,0 +1,175 @@
+14:33:24 От Ayjemal Berdiyeva до Все:
+	Guten Tag. Ich kann heute nur zuhören. 
+	
+14:40:09 От Teacher 23 Teacher 23 до Все:
+	Aufgabe 1: Schreiben Sie ein Python-Programm, das zufällige Fakten über Katzen ausgibt.
+	
+14:42:20 От Teacher 23 Teacher 23 до Все:
+	REST-API
+	
+14:43:18 От Teacher 23 Teacher 23 до Все:
+	Eine REST-API (Representational State Transfer Application Programming Interface) ist eine Schnittstelle, die den Prinzipien des REST-Architekturstils folgt. Sie ermöglicht die Kommunikation zwischen verschiedenen Softwareanwendungen, unabhängig von Betriebssystemen oder Plattformen, und wird häufig für Webservices genutz
+	
+14:43:21 От Hanna Kulykovska до Все:
+	In der Programmierung sind diejenigen, die masochistische Neigungen haben👻
+	
+14:44:47 От Teacher 23 Teacher 23 до Все:
+	https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html
+	
+14:48:09 От Yevgeniy G до Все:
+	https://catfact.ninja/fact
+	
+14:48:56 От Hanna Kulykovska до Все:
+	Ich kann heute nur hören
+	
+14:49:01 От Stanislav M. до Все:
+	+
+	
+14:49:07 От Alexander Golubenko до Все:
+	+
+	
+14:49:23 От Dmitro Averkiev до Все:
+	+
+	
+14:49:24 От Olha Dvornyk до Все:
+	+
+	
+14:51:29 От Klymentii Taran до Все:
+	aber nicht dann, wenn die von uns was wollen. da sollen wir in 1-3 tagen alles machen :/
+	
+14:51:50 От Klymentii Taran до Все:
+	na Sie nicht 😄
+	
+14:52:06 От Klymentii Taran до Все:
+	aber Vermieter, oder Ausländerbehörde etc. :D
+	
+14:52:19 От Dmitro Averkiev до Все:
+	Die Pluse sind für „nur Zuhörer“ da ✌️
+	
+14:57:49 От Olha Dvornyk до Все:
+	+
+	
+14:57:49 От Stanislav M. до Все:
+	+
+	
+14:57:52 От Alexander Golubenko до Все:
+	+
+	
+14:57:52 От Vadym Prudnikov до Все:
+	+
+	
+14:58:05 От Yevgeniy G до Все:
+	       +
+	
+14:58:43 От Teacher 23 Teacher 23 до Все:
+	🖐️
+	
+14:59:03 От Stanislav M. до Все:
+	Replying to "🖐️":
+	+
+	
+14:59:03 От Maksym Poliakov до Все:
+	import  requests
+	
+	url = 'https://catfact.ninja/fact'
+	
+	reqt = requests.get(url)
+	dict_tmp  = reqt.json()
+	
+	
+	for key , value in dict_tmp.items() :
+	    print(f'{key} \n случайный текст {value}') 
+	
+15:00:39 От Klymentii Taran до Все:
+	muss leider Unterricht verlassen, da einen Termin habe
+	
+15:01:06 От Teacher 23 Teacher 23 до Все:
+	https://catfact.ninja/fact
+	
+15:02:06 От Teacher 23 Teacher 23 до Все:
+	{
+	"fact": "The strongest climber among the big cats, a leopard can carry prey twice its weight up a tree.",
+	"length": 94
+	}
+	
+15:04:59 От Teacher 23 Teacher 23 до Все:
+	curl —version
+	
+15:05:32 От Stanislav M. до Все:
+	Replying to "import  requests  url = 'https://catfact.ninja/fac...":
+	import requests
+	import json
+	
+	def get_response(url):
+	    return requests.get(url)
+	
+	
+	url = 'https://catfact.ninja/fact'
+	response = get_response(url)
+	print(json.loads(response.text)['fact'])
+	
+15:06:14 От Teacher 23 Teacher 23 до Все:
+	curl https://catfact.ninja/fact
+	
+15:07:53 От Teacher 23 Teacher 23 до Все:
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+	
+15:15:54 От Teacher 23 Teacher 23 до Все:
+	Aufgabe 1: Schreiben Sie ein Python-Programm, das zufällige Fakten über Katzen ausgibt.
+	
+15:18:45 От Teacher 23 Teacher 23 до Все:
+	GET: Abrufen von Daten.
+	POST: Senden neuer Daten.
+	PUT: Aktualisieren bestehender Daten.
+	DELETE: Löschen von Daten
+	
+15:32:31 От Stanislav M. до Все:
+	+
+	
+15:32:40 От Alexander Golubenko до Все:
+	+
+	
+15:32:47 От Teacher 23 Teacher 23 до Все:
+	Aufgabe 2: Schreiben Sie ein Python-Programm, das Informationen über einen Film anhand des Titels abruft, unter Verwendung der API von The Movie Database (TMDB).
+	
+15:36:29 От Teacher 23 Teacher 23 до Все:
+	https://developer.themoviedb.org/reference/intro/getting-started
+	
+15:37:42 От Teacher 23 Teacher 23 до Все:
+	https://api.themoviedb.org/3/search/movie?api_key=IHR_SCHLÜSSEL&query=Inception
+	\
+	Olha Dvornyk:👍
+	
+15:37:47 От Hanna Kulykovska до Все:
+	„sollen“
+	 — «следует», «должен (по чьим-то словам/морали)»
+	
+	
+	Звучит мягче, чем „müssen“.
+	Часто выражает рекомендацию, моральное обязательство или передачу чьего-то приказа.
+	Может звучать как **непрямой
+	Olha Dvornyk:👍
+	
+15:39:28 От Darina Trotskaya до Все:
+	Ich höre von die deutsche Menschen „soll ich“ mehr als „muss ich“
+	Hanna Kulykovska:💯
+	
+15:41:46 От Stanislav M. до Все:
+	"Müssen" drückt eine allgemeine, objektive Notwendigkeit aus.
+	"Sollen" drückt eine Notwendigkeit aufgrund einer Aufforderung oder Empfehlung von außen aus.
+	
+15:42:09 От Teacher 23 Teacher 23 до Все:
+	https://duckduckgo.com/?q=muss+ich+sollen+oder+mussen+benutzen&ia=web
+	
+15:42:10 От Darina Trotskaya до Все:
+	„Darf ich“ es ist um Erlaubnis zu bitten
+	
+15:46:56 От Stanislav M. до Все:
+	-
+	
+15:53:34 От Teacher 23 Teacher 23 до Все:
+	https://api.themoviedb.org/3/search/movie?api_key=IHR_SCHLÜSSEL&query=Inception
+	
+15:54:50 От Teacher 23 Teacher 23 до Все:
+	12345abcde67890XYZ
+	

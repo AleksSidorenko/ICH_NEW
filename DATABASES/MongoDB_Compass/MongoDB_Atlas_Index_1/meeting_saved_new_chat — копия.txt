@@ -1,0 +1,189 @@
+08:59:06 От Vadym Prudnikov до Все:
+	{доброе: "$утречко!"}
+	Yevgeniy G, Ayjemal Berdiyeva, Alexander Golubenko:🤝🏻
+	
+09:01:41 От Alla Vinogradova до Все:
+	Всем доброе утро ☀️
+	
+	@Teacher 23 Teacher 23  Алексей, сегодня я в качестве слушателя и смотрителя ))
+	
+09:10:00 От Teacher 23 Teacher 23 до Все:
+	https://www.mongodb.com/
+	
+09:13:26 От Dmitro Averkiev до Все:
+	-
+	
+09:13:27 От Hanna Kulykovska до Все:
+	+
+	
+09:13:30 От Olha Dvornyk до Все:
+	+
+	
+09:13:31 От Olena Marshalova до Все:
+	-
+	
+09:13:32 От Alex Sidorenko до Все:
+	-
+	
+09:13:34 От Maksym Poliakov до Все:
+	+
+	
+09:13:36 От Yevgeniy G до Все:
+	+
+	
+09:13:37 От Ayjemal Berdiyeva до Все:
+	+
+	
+09:13:37 От Oleksii Starodubov до Все:
+	+
+	
+09:18:36 От Vitali Salamatin до Все:
+	+
+	
+09:20:46 От Dmitro Averkiev до Все:
+	Will your application include any of the following architectural models?
+	
+09:20:56 От Dmitro Averkiev до Все:
+	что там выбирать?
+	
+09:21:01 От Stanislav M. до Все:
+	Replying to "Will your application include any of the following...":
+	not sure
+	Dmitro Averkiev:❤️
+	
+09:33:29 От Hanna Kulykovska до Все:
+	Replying to "Will your application include any of the following...":
+	Screenshot2025_04_02_093318.jpg
+	Stanislav M., Oleksii Starodubov:🥰
+	
+09:52:35 От Teacher 23 Teacher 23 до Все:
+	Экспортировать для будущих экспериментов 2 коллекции - shipwrecks  и sample_airbnb .
+	
+11:03:50 От Teacher 23 Teacher 23 до Все:
+	{
+	  coordinates: {
+	    $geoWithin: {
+	      $centerSphere: [
+	        [-96.48616143525156, 30.714748058919618],
+	        0.07401030386454095
+	      ]
+	    }
+	  }
+	}
+	
+11:04:41 От Teacher 23 Teacher 23 до Все:
+	https://www.mongodb.com/docs/manual/core/indexes/index-types/geospatial/2d/calculate-distances/#std-label-calculate-distance-spherical-geometry
+	
+11:16:12 От Teacher 23 Teacher 23 до Все:
+	Создать индексы в коллекции sample_airbnb для name и для accommodates (по-отдельности).
+	При создании дать индексу свое название и атрибут уникальности.
+	Выполнить выборку с использованием индекса.
+	Удалить индекс.
+	
+11:28:57 От Teacher 23 Teacher 23 до Все:
+	"Deluxe Loft Suite"
+	
+11:35:10 От Yevgeniy G до Все:
+	.createIndex(
+	  {name: 1}, {name: "name_index"}
+	)
+	
+11:35:28 От Yevgeniy G до Все:
+	.getIndexes()
+	
+11:37:51 От Stanislav M. до Все:
+	0.0.0.0/0
+	
+11:42:54 От Alexander Golubenko до Все:
+	Replying to "0.0.0.0/0":
+	Еще лайфаки давай. 0-и вставил
+	
+11:45:09 От Stanislav M. до Все:
+	Replying to "0.0.0.0/0":
+	Еще лайфаки давай. 0-и вставил
+	🤔 нипонял
+	
+11:48:55 От Dmitro Averkiev до Все:
+	Replying to "0.0.0.0/0":
+	@Stanislav M. Больше лайфхаков кидай, говорит. полезно
+	
+11:49:11 От Yevgeniy G до Все:
+	 .find({name: "Deluxe Loft Suite"}, {name:1, _id:1})
+	
+11:49:26 От Yevgeniy G до Все:
+	.explain().find({name: "Deluxe Loft Suite"}, {name:1, _id:1})
+	
+11:49:48 От Yevgeniy G до Все:
+	.dropIndex("name_index")
+	
+11:50:15 От Alexander Golubenko до Все:
+	Replying to "0.0.0.0/0":
+	@Stanislav M. как еще смазать эти костыли, что бы уменьшить суету при подключении и работе
+	
+11:51:54 От Teacher 23 Teacher 23 до Все:
+	students.csv
+	
+11:51:59 От Stanislav M. до Все:
+	Replying to "0.0.0.0/0":
+	На самом деле там есть пара вариантов, я попробую произвести изыскания - если что то хорошее найду то поделюсь 😁
+	
+11:53:28 От Teacher 23 Teacher 23 до Все:
+	sID,name,year,score
+	22001,Alex,1,4
+	21001,bernie,2,3.7
+	20010,Chris,3,2.5
+	22021,Drew,1,3.2
+	17301,harley,6,3.1
+	21022,Farmer,1,2.2
+	20020,george,6,2.8
+	18020,Harley,5,2.8
+	
+11:53:31 От Teacher 23 Teacher 23 до Все:
+	csv
+	
+12:03:33 От Maksym Poliakov до Все:
+	попробуй сохранить как и там выбери формат сохранения
+	Olha Dvornyk:💯
+	
+12:07:12 От Teacher 23 Teacher 23 до Все:
+	Выбрать студентов, которые являются выпускниками (год = 6)Заполнить данными другую коллекцию graduated_students
+	
+12:12:13 От Alex Sidorenko до Все:
+	[
+	  {
+	    $match: {
+	      year: 6
+	    }
+	  },
+	  {
+	    $out: "graduated_students"
+	  }
+	]
+	
+12:12:42 От Dmitro Averkiev до Все:
+	+
+	
+12:12:43 От Oleksii Starodubov до Все:
+	+
+	
+12:12:43 От Alexander Golubenko до Все:
+	+
+	
+12:12:43 От Olha Dvornyk до Все:
+	+
+	
+12:12:44 От Ayjemal Berdiyeva до Все:
+	+
+	
+12:12:59 От Hanna Kulykovska до Все:
+	+
+	
+12:13:00 От Alex Sidorenko до Все:
+	-
+	
+12:13:00 От Olena Marshalova до Все:
+	+
+	
+12:13:53 От Teacher 23 Teacher 23 до Все:
+	sample_mflix.theaters.json
+	
