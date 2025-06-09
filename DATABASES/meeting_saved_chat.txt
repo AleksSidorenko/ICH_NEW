@@ -1,75 +1,0 @@
-09:21:27 От Teacher 23 Teacher 23 до Все:
-	describe goods;
-09:29:46 От Teacher 23 Teacher 23 до Все:
-	Создать таблицу goods с полями	id (первичный ключ)	title (cтрока максимум в 30 символов)	quantity (число больше 0)	in_stock (символ (Y/N)
-09:39:55 От Oleksii Starodubov до Все:
-	in
-09:46:27 От Hanna Kulykovska до Все:
-	CREATE TABLE IF NOT EXISTS goods(						id int PRIMARY KEY AUTO_INCREMENT,	                    title varchar(30),	                    quantity int CHECK (quantity > 0),	                    in_stock char(1) CHECK (in_stock IN ('Y', 'N'))					  )
-09:46:43 От Hanna Kulykovska до Все:
-	-- CREATE TABLE IF NOT EXISTS goods(	-- 					id int PRIMARY KEY AUTO_INCREMENT,	--                     title varchar(30),	--                     quantity int CHECK (quantity > 0),	--                     in_stock char(1) CHECK (in_stock IN ('Y', 'N'))	-- 				  )
-09:54:59 От Teacher 23 Teacher 23 до Все:
-	https://www.w3schools.com/sql/sql_exists.asp
-09:58:59 От Teacher 23 Teacher 23 до Все:
-	После создания таблицы, попробуйте добавить в нее несколько строчек с данными (минимум 10 строк), нарушив указанные вами при создании таблицы ограничения, например, одинаковые id или отрицательное количество, а также in_stock со значением ‘yes’. 	Убедитесь, что база данных выдала ошибку при попытке добавить такие строки, прочитайте сообщения об ошибке, исправьте ее и повторите попытку.
-10:16:53 От Maksym Poliakov до Все:
-	сбрось весь скрипт
-10:29:22 От Alexander Golubenko до Все:
-	INSERT INTO goods (title, quantity, in_stock) VALUES 	('Laptop', 29,'YES'),	('Computer', 30,'N');
-10:30:47 От Hanna Kulykovska до Все:
-	('Fridge', 13, 'Y')
-10:31:30 От Vadym Prudnikov до Все:
-	('bike', 5, 'Y'),
-10:32:33 От Alla Vinogradova до Все:
-	(‘Scooter’, 15, ‘Y’)
-10:32:47 От Yevgeniy G до Все:
-	('USB flash', 18, 'N'),
-10:33:42 От Yevgeniy G до Все:
-	('TV', 25, 'Y')
-10:33:56 От Stanislav M. до Все:
-	('Sweet Roll', 99, 'Y')
-10:34:53 От Alexander Golubenko до Все:
-	INSERT INTO goods (title, quantity, in_stock) VALUES 	('Laptop', 29,'Y'),	('Computer', 30,'N'),	('Mouse', 89,'Y'),	('Motherboard', 45, 'Y'),	('Fridge', 13, 'N'),	('bike', 5, 'Y'),	('USB flash', 18, 'N'),	('Scooter',  15, 'Y'),	('TV', 25, 'Y'),	('Sweet Roll', 99, 'Y');
-10:34:59 От Teacher 23 Teacher 23 до Все:
-	50
-10:43:20 От Stanislav M. до Все:
-	value = None	if value == True:	    print("None is != True")	elif value == False:	    print("None is != False")	elif value == None:	    print('In a boolean context, None is considered falsy.')
-10:51:14 От Teacher 23 Teacher 23 до Все:
-	https://www.w3schools.com/mysql/func_mysql_cast.asp
-10:51:25 От Teacher 23 Teacher 23 до Все:
-	https://www.schoolsw3.com/sql/sql_ref_add_constraint.php
-10:51:34 От Teacher 23 Teacher 23 до Все:
-	https://www.schoolsw3.com/sql/sql_ref_drop_constraint.php
-11:04:20 От Alla Vinogradova до Все:
-	111124_Vinogradova
-11:21:07 От Teacher 23 Teacher 23 до Все:
-	alter table new_students	add unique (email);
-11:21:27 От Teacher 23 Teacher 23 до Все:
-	describe new_students;		show create table new_students;
-11:21:36 От Teacher 23 Teacher 23 до Все:
-	INSERT INTO new_students(employee_id,first_name,last_name,email) VALUES	(268, 'Alex','KAdetov', 'ABULL');		alter table new_students	drop constraint email;		DELETE FROM new_students WHERE employee_id = 268
-11:32:19 От Teacher 23 Teacher 23 до Все:
-	https://www.w3schools.com/mysql/func_mysql_cast.asp
-11:45:21 От Teacher 23 Teacher 23 до Все:
-	Создать таблицу goods_2 с полями:	id (уникальное значение)	title (cтрока максимум 30 символов)	quantity (число больше 0)	price (целое число)	in_stock (символ (Y/N))
-11:53:50 От Teacher 23 Teacher 23 до Все:
-	Заполните созданную таблицу goods_2 данными, минимум 10 строк.
-11:54:18 От Vadym Prudnikov до Все:
-	CREATE TABLE goods_2	(id int primary key auto_increment,	title varchar(30),	quantity int check (quantity > 0) not null,	price int,	in_stock char(1) check (in_stock in ('Y' , 'N')));
-11:59:22 От Olha Dvornyk до Все:
-	SELECT * FROM goods_2;	/*INSERT INTO goods_5constr_2 (title, quantity, in_stock, price) VALUES				('Laptop', 29,'Y', 123),				('Computer', 30,'N', 548),				('Mouse', 89,'Y', 56),				('Motherboard', 45, 'Y', 45558),				('Fridge', 13, 'N', 456),				('bike', 5, 'Y', 12),				('USB flash', 18, 'N', 267),				('Scooter',  15, 'Y', 64),				('TV', 25, 'Y', 649),				('Sweet Roll', 99, 'Y', 235),	            ('Велосипед', 2, 'Y',12369),				('Скейт', 4, 'Y', 187),	            ('Самокат', 2, 'Y', 298),	            ('Сноуборд', 7, 'N', 357),	            ('Санки', 1, 'Y', 159),	            ('Коньки', 3, 'N', 456),				('Ролики', 5, 'Y', 8502)	;		*/	SELECT * FROM goods_2;
-11:59:26 От Teacher 23 Teacher 23 до Все:
-	Вывести все наименования товаров (включая дубли) из двух таблиц
-12:05:06 От Vitali S до Все:
-	SELECT title
-	FROM goods_2
-	UNION ALL SELECT title
-	FROM  goods
-	ORDER BY title
-12:07:56 От Teacher 23 Teacher 23 до Все:
-	Объединить данные из двух таблиц, указав price, где это возможно.
-12:14:28 От Alla Vinogradova до Все:
-	select id, title,  quantity, in_stock, 0 as price
-	from goods
-	union all 
-	select id, title,  quantity, in_stock, price from goods_2;
